@@ -20,6 +20,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.ElementController.ActionOnElement;
+import com.ElementController.ExecuteActions;
 import com.ElementController.GetElementBy;
 import com.Utils.*;
 
@@ -47,58 +48,13 @@ public class Draft {
            	 	lstRowValue.add(cell.toString());
             }
             if (lstRowValue.size() < 1) continue;
-            lsGetResult = DoStep(lstRowValue);
+            lsGetResult = ExecuteActions.DoStep(lstRowValue);
             WriteXLSX("Sheet1", row.getRowNum(), Constants.CONST_STATUS_INDEX, lsGetResult.get(0), lsGetResult.get(1));
             System.out.println(Arrays.toString(lstRowValue.toArray())); // To iterate over to the next row
         }
         input_document.close(); //Close the XLS file opened for printing
 	}
-	public static List<String> DoStep(List<String> ActionsOfStep){
-//		ActionsOfStep = Arrays.asList(new String[6]);
-		List<String> lsResult = new ArrayList<String>();
-		String strAction = ActionsOfStep.get(2).toUpperCase();
-		String strTarget = "";// = ActionsOfStep.get(3);
-		String strValue = ""; // = ActionsOfStep.get(4);
-		if (ActionsOfStep.size() > 3){
-			strTarget = ActionsOfStep.get(3);
-			strValue = ActionsOfStep.get(4);
-	}
-		
-		switch(strAction) {
-		case Actions.ACT_CLOSE:
-			String strExceptionClose = ActionOnElement.Action(element, strAction, "", "", "");
-			lsResult = Common.returnResult(strExceptionClose);
-			break;
-		case Actions.ACT_OPEN:
-			String strExceptionOpen = ActionOnElement.Action(element, strAction, "", strTarget, "");
-			lsResult = Common.returnResult(strExceptionOpen);
-			break;
-		case Actions.ACT_SENDKEY:
-			String [] arrTarget = strTarget.split("=");
-			String strExceptionSendKey = ActionOnElement.Action(element, strAction, arrTarget[0], arrTarget[1], strValue);
-			lsResult = Common.returnResult(strExceptionSendKey);
-			break;
-		
-		default:
-			break;
-		}
-		return lsResult;
-	}
-	
-
-	
-//	public static String CloseBrowser(){
-//		String log;
-//		try{
-//			driver.quit();
-//			log = "";
-//		}
-//		catch(Exception ex){
-//			log = ex.toString();
-//		}
-//		return log;
-//	}
-	
+			
 	static void WriteXLSX(String strCurrentSheet, int rowIndex, int cellIndex, String strStatus, String strLog) throws IOException{
 		String excelFileName = Constants.CONST_DATA_DRIVEN_PATH;//name of excel file
 //		String sheetName = strCurrentSheet;//name of sheet
