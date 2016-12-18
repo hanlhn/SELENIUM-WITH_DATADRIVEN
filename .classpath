@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="references/client-combined-3.0.0-beta2-nodeps.jar"/>
+	<classpathentry kind="lib" path="references/selenium-java-2.53.1.jar"/>
+	<classpathentry kind="lib" path="references/lib/cglib-nodep-3.2.4.jar"/>
+	<classpathentry kind="lib" path="references/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="references/lib/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="references/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="references/lib/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="references/lib/guava-19.0.jar"/>
+	<classpathentry kind="lib" path="references/lib/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="references/lib/hamcrest-library-1.3.jar"/>
+	<classpathentry kind="lib" path="references/lib/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="references/lib/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="references/lib/httpmime-4.5.2.jar"/>
+	<classpathentry kind="lib" path="references/lib/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="references/lib/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="references/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="references/lib/netty-3.5.7.Final.jar"/>
+	<classpathentry kind="lib" path="references/lib/phantomjsdriver-1.2.1.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
